@@ -6,9 +6,9 @@
 
 # translate each morse_letter into a letter
 # ----------possible solution--------------
-#   nested_array.map! do |arr|
-#     arr.map! { |morse_letter| decode_table[morse_letter] }
-#   end
+# nested_array.map! do |arr|
+#   arr.map! { |morse_letter| decode_table[morse_letter] }
+# end
 # -----------------------------------------
   #loop through the new array of arrays we got from the previos 2 steps
     # loop through the inside array (using map! to update in place)
