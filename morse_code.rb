@@ -28,9 +28,16 @@ morse_decoder {
   '--..' => 'z',
 
 }
-# sepeare sentence in `words` using `split` and store it
 
+def sentence_to_words(sentence)
+  # sepeare sentence in `words` using `split` and store it
+  sentence.split('   ')
+end
+
+def word_to_letters(word)
 # seperarte `words` in `letters` using `split` and store it
+  word.split
+end
 
 # translate each morse_letter into a letter
 # ----------possible solution--------------
