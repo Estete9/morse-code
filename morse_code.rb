@@ -1,5 +1,33 @@
 # create a hash with the Morse code for each letter as keys and the alphabet as values
+morse_decoder {
+  '.-' => 'a',
+  '-...' => 'b',
+  '-.-.' => 'c',
+  '-..' => 'd',
+  '.' => 'e',
+  '..-.' => 'f',
+  '--.' => 'g',
+  '....' => 'h',
+  '..' => 'i',
+  '.---' => 'j',
+  '-.-' => 'k',
+  '.-..' => 'l',
+  '--' => 'm',
+  '-.' => 'n',
+  '---' => 'o',
+  '.--.' => 'p',
+  '--.-' => 'q',
+  '.-.' => 'r',
+  '...' => 's',
+  '-' => 't',
+  '..-' => 'u',
+  '...-' => 'v',
+  '.--' => 'w',
+  '-..-' => 'x',
+  '-.--' => 'y',
+  '--..' => 'z',
 
+}
 # sepeare sentence in `words` using `split` and store it
 
 # seperarte `words` in `letters` using `split` and store it
