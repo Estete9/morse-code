@@ -40,13 +40,13 @@ def morse_to_letter(morse_letter)
   @morse_decoder[morse_letter]
 end
 
+# sepeare sentence in `words` using `split` and store it
 def sentence_to_words(sentence)
-  # sepeare sentence in `words` using `split` and store it
   sentence.split('   ')
 end
 
-def word_to_letters(word)
 # seperarte `words` in `letters` using `split` and store it
+def word_to_letters(word)
   word.split
 end
 
@@ -59,11 +59,8 @@ end
 # Take a string (morse code message) and return the decoded message:
 def decode(code)
   words_array = sentence_to_words(code)
-  # puts "words_array: #{words_array}"
   letters_array = words_array.map { |word| word_to_letters(word) }
-  # puts "letters_array: #{letters_array}"
   decoded_message = decode_message(letters_array)
-  # puts "decoded_message: #{decoded_message}"
   flatten_array(decoded_message)
 end
 
