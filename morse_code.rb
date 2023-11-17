@@ -28,17 +28,6 @@
   '--..' => 'z',
 }
 
-# Take a string (morse code message) and return the decoded message
-def decode(code)
-  words_array = sentence_to_words(code)
-  puts "words_array: #{words_array}"
-  letters_array = words_array.map { |word| word_to_letters(word) }
-  puts "letters_array: #{letters_array}"
-  decoded_message = decode_message(letters_array)
-  puts "decoded_message: #{decoded_message}"
-  flatten_array(decoded_message)
-end
-
 # Takes an nested array with morse_letters and returns it decoded
 def decode_message(message_arr)
   message_arr.map do |word_arr|
