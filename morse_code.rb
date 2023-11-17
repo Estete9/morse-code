@@ -1,5 +1,5 @@
 # create a hash with the Morse code for each letter as keys and the alphabet as values
-morse_decoder {
+@morse_decoder = {
   '.-' => 'a',
   '-...' => 'b',
   '-.-.' => 'c',
@@ -26,8 +26,30 @@ morse_decoder {
   '-..-' => 'x',
   '-.--' => 'y',
   '--..' => 'z',
-
 }
+
+# Take a string (morse code message) and return the decoded message
+def decode(code)
+  words_array = sentence_to_words(code)
+  puts "words_array: #{words_array}"
+  letters_array = words_array.map { |word| word_to_letters(word) }
+  puts "letters_array: #{letters_array}"
+  decoded_message = decode_message(letters_array)
+  puts "decoded_message: #{decoded_message}"
+  flatten_array(decoded_message)
+end
+
+# Takes an nested array with morse_letters and returns it decoded
+def decode_message(message_arr)
+  message_arr.map do |word_arr|
+    word_arr.map { |morse_letter| morse_to_letter(morse_letter) }
+  end
+end
+
+# Takes a morse_letter and returns a letter
+def morse_to_letter(morse_letter)
+  @morse_decoder[morse_letter]
+end
 
 def sentence_to_words(sentence)
   # sepeare sentence in `words` using `split` and store it
@@ -39,22 +61,7 @@ def word_to_letters(word)
   word.split
 end
 
-# translate each morse_letter into a letter
-# ----------possible solution--------------
-# nested_array.map! do |arr|
-#   arr.map! { |morse_letter| decode_table[morse_letter] }
-# end
-# -----------------------------------------
-  #loop through the new array of arrays we got from the previos 2 steps
-    # loop through the inside array (using map! to update in place)
-      # use the current element as key in the alphabet hash
-      # modify in place the current element in the array with the value matched with the key
-
 # flatten the array
-# ----------possible solution--------------
-# nested_array.map!(&:join).join(" ")
-# -----------------------------------------
-  #loop through the array of arrays (using map! to update in place)
-    #join without seperator
-  # Joing the array of arrays (now is only a normal array) with join and a space as seperator
-# return the modified variable that now is a string
+def flatten_array(message_arr)
+  message_arr.map(&:join).join(' ')
+end
